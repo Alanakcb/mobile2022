@@ -6,17 +6,13 @@ import {
   TextInput,
   ImageBackground,
 } from "react-native";
-import { MaterialIcons, Entypo } from "@expo/vector-icons";
+import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
 import Button from "../../components/Button";
 import styles from "./styles";
-import { LoginTypes } from "../../types/Screen.types";
 
-export default function Login({ navigation }: LoginTypes) {
+export default function Cadastrar() {
   async function handleSignIn() {
-    console.log("Login");
-  }
-  function handleCadastrar() {
-    navigation.navigate("Cadastrar");
+    console.log("Cadastrar");
   }
 
   return (
@@ -27,6 +23,10 @@ export default function Login({ navigation }: LoginTypes) {
       >
         <KeyboardAvoidingView>
           <Text style={styles.title}>Login</Text>
+          <View style={styles.formRow}>
+            <Ionicons name="person" style={styles.icon} />
+            <TextInput style={styles.input} placeholder="Nome" />
+          </View>
           <View style={styles.formRow}>
             <MaterialIcons name="email" style={styles.icon} />
             <TextInput
@@ -46,7 +46,7 @@ export default function Login({ navigation }: LoginTypes) {
             />
           </View>
           <Button title="Login" type="pink" onPress={handleSignIn} />
-          <Button title="Cadastre-se" type="black" onPress={handleCadastrar} />
+          <Button title="Cadastre-se" type="black" onPress={handleSignIn} />
         </KeyboardAvoidingView>
       </ImageBackground>
     </View>
