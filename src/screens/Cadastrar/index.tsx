@@ -22,7 +22,7 @@ export default function Cadastrar() {
         style={styles.container}
       >
         <KeyboardAvoidingView>
-          <Text style={styles.title}>Login</Text>
+          <Text style={styles.title}>Cadastre-se</Text>
           <View style={styles.formRow}>
             <Ionicons name="person" style={styles.icon} />
             <TextInput style={styles.input} placeholder="Nome" />
