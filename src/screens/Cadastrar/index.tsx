@@ -9,8 +9,9 @@ import {
 import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
 import Button from "../../components/Button";
 import styles from "./styles";
+import { LoginTypes } from "../../types/Screen.types";
 
-export default function Cadastrar() {
+export default function Cadastrar({ navigation }: LoginTypes) {
   async function handleSignIn() {
     console.log("Cadastrar");
   }
