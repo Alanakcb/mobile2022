@@ -14,13 +14,12 @@ export default function Cadastrar() {
   async function handleSignIn() {
     console.log("Cadastrar");
   }
+  function handleLogin() {
+    navigation.navigate("Login");
+  }
 
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/fundo.png")}
-        style={styles.container}
-      >
         <KeyboardAvoidingView>
           <Text style={styles.title}>Cadastre-se</Text>
           <View style={styles.formRow}>
@@ -46,9 +45,8 @@ export default function Cadastrar() {
             />
           </View>
           <Button title="Login" type="pink" onPress={handleSignIn} />
-          <Button title="Cadastre-se" type="black" onPress={handleSignIn} />
+          <Button title="Cadastre-se" type="black" onPress={handleLogin} />
         </KeyboardAvoidingView>
-      </ImageBackground>
     </View>
   );
 }

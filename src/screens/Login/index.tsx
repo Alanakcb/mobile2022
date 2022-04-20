@@ -13,18 +13,14 @@ import { LoginTypes } from "../../types/Screen.types";
 
 export default function Login({ navigation }: LoginTypes) {
   async function handleSignIn() {
-    console.log("Login");
+    navigation.navigate("Tab");
   }
   function handleCadastrar() {
-    navigation.navigate("Cadastrar");
+    navigation.navigate("Cadastrar")
   }
 
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/fundo.png")}
-        style={styles.container}
-      >
         <KeyboardAvoidingView>
           <Text style={styles.title}>Login</Text>
           <View style={styles.formRow}>
@@ -48,7 +44,6 @@ export default function Login({ navigation }: LoginTypes) {
           <Button title="Login" type="pink" onPress={handleSignIn} />
           <Button title="Cadastre-se" type="black" onPress={handleCadastrar} />
         </KeyboardAvoidingView>
-      </ImageBackground>
     </View>
   );
 }

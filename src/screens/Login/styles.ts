@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
-    color: colors.pink,
+    color: colors.black,
     marginBottom: 20,
   },
   formRow: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: colors.pink,
+    borderColor: colors.black,
     borderRadius: 5,
   },
   label: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 24,
-    color: colors.pink,
+    color: colors.black,
     padding: 10
   }
 })
