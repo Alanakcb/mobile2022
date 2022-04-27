@@ -11,7 +11,10 @@ export default function TabNavigation() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarBadgeStyle: { backgroundColor: colors.purple },
+        tabBarActiveBackgroundColor: colors.black,
+        tabBarActiveTintColor: colors.white,
+        tabBarInactiveBackgroundColor: colors.primary,
+        tabBarInactiveTintColor: colors.white,
       }}
     >
       <Tab.Screen
@@ -19,7 +22,7 @@ export default function TabNavigation() {
         component={PerfilScreen}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="person" size={24} color={colors.purple} />
+            <Ionicons name="person" size={24} color={colors.primary} />
           ),
         }}
       />

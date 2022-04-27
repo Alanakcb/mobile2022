@@ -6,12 +6,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: colors.primaryLight,
   },
   title: {
     fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
-    color: colors.pink,
+    color: colors.black,
     marginBottom: 20,
   },
   formRow: {
