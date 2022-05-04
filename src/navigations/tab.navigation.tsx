@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { PerfilScreen } from "../screens";
+import { ChatScreen, PerfilScreen } from "../screens";
 import colors from "../styles/colors";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -23,6 +23,15 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="person" size={24} color={colors.primary} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="chatbubbles" size={24} color={colors.primary} />
           ),
         }}
       />

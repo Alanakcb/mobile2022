@@ -9,16 +9,22 @@ const styles = StyleSheet.create({
   },
   rowSearch: {
     flexDirection: "row",
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primaryLight,
     borderRadius: 10,
     margin: 10,
     alignItems: "center",
-    width: "80%",
+    width: "100%",
     height: 45
   },
   icon: {
     fontSize: 24,
     padding: 5
+  },
+  input: {
+    width: "50%"
+  },
+  list: {
+    marginBottom: 10
   }
 });
 

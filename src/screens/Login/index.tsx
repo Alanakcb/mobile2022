@@ -42,7 +42,7 @@ export default function Login({ navigation }: LoginTypes) {
             />
           </View>
           <Button title="Login" type="primary" onPress={handleSignIn} />
-          <Button title="Cadastre-se" type="black" onPress={handleCadastrar} />
+          <Button title="Cadastre-se" type="primary" onPress={handleCadastrar} />
         </KeyboardAvoidingView>
     </View>
   );
