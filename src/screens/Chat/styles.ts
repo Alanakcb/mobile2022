@@ -6,10 +6,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 10,
     alignItems: "center",
+    backgroundColor: colors.primaryLight,
   },
   rowSearch: {
     flexDirection: "row",
-    backgroundColor: colors.primaryLight,
+    backgroundColor: colors.third,
     borderRadius: 10,
     margin: 10,
     alignItems: "center",

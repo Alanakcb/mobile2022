@@ -10,7 +10,7 @@ export interface CardSocialProps {
       mensagem: string,
       topico: {
         id: number,
-        item: string
+        comentario: string
       }[]
     }
   }

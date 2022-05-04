@@ -11,9 +11,9 @@ export default function DrawerNavigation() {
     <Drawer.Navigator
       screenOptions={{
         headerShown: true,
-        headerStyle: { backgroundColor: colors.secondary },
-        headerTintColor: colors.white,
-        drawerStyle: { backgroundColor: colors.secondary },
+        headerStyle: { backgroundColor: colors.primary },
+        headerTintColor: colors.primary,
+        drawerStyle: { backgroundColor: colors.primary },
         drawerActiveTintColor: colors.white,
         drawerInactiveTintColor: colors.white,
       }}
