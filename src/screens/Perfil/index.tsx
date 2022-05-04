@@ -7,7 +7,7 @@ import Button from "../../components/Button";
 
 export default function Perfil() {
   return (
-    <View>
+    <View style={styles.container}>
       <Image source={require("../../assets/perfil.png")} />
       <Text style={styles.title}>Alana Karine C. Borges</Text>
       <CardSocial>
