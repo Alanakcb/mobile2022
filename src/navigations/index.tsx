@@ -1,11 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import LoginNavigation from "./login.navigation";
+import TabNavigation from "./tab.navigation";
+import { useAuth } from "../hook/auth";
 
 export default function Navigation() {
+  const {acess_token}=useAuth();
   return (
     <NavigationContainer>
-      <LoginNavigation />
+      {access_token ? <TabNavigation /> : <LoginNavigation />}
     </NavigationContainer>
   );
 }

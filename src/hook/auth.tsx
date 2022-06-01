@@ -5,7 +5,7 @@ import React, {
     useState,
     useEffect,
 }from "react";
-import {apiUser} from "../services/data";
+import {apiUser} from "../services/data_antigo";
 import api from "../services/api";
 import { IAuthState, IAuthContextData } from "../interfaces/User.interface";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -60,4 +60,30 @@ const AuthProvider: React.FC = ({ children }) => {
             setAuth({ access_token, user: JSON.parse(user) });
         }
     },[]);
+    useEffect(() => {
+        loadUserStorageData();
+    },[]);
+
+    return (
+        <AuthContext.Provider
+            value={{
+                signIn,
+                signOut,
+                register,
+                access_token: auth?.access_token,
+                user: auth?.user,
+            }}
+        >
+            {children}
+        </AuthContext.Provider>
+    );
+};
+function userAuth(): IAuthContextData{
+    const context = useContext(AuthContext);
+
+    if(!context){
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context;
 }
+export {AuthProvider, useAuth};
