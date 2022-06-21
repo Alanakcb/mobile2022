@@ -3,5 +3,5 @@ import LottieView from "lottie-react-native";
 import loadingLottie from "../../lotties/loading.json";
 
 export default function Loading(){
-    return <Loading source={loadingLottie} autoPlay loop />;
+    return <LottieView source={loadingLottie} autoPlay loop />;
 }

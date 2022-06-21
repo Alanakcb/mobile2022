@@ -28,6 +28,16 @@ export default function DrawerNavigation() {
         }}
       />
       <Drawer.Screen
+        name="Sair"
+        component={SairScreen}
+        options={{
+        drawerLabel: "Sair",
+          drawerIcon: () => (
+            <Ionicons name="exit" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Drawer.Screen
         name="Chat"
         component={ChatScreen}
         options={{

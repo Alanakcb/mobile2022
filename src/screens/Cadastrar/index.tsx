@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   View,
   Text,
@@ -57,7 +57,7 @@ export default function Cadastrar({ navigation }: LoginTypes) {
     <>
       {isLoading ? (
         <LoadingComp/>
-      ) : )
+      ) : (
         <View style={styles.container}>
             <KeyboardAvoidingView>
               <Text style={styles.title}>Cadastre-se</Text>
@@ -91,12 +91,11 @@ export default function Cadastrar({ navigation }: LoginTypes) {
               </View>
               <ButtonComp
                 title="Salvar"
-                type="purple"
+                type="primary"
                 onPress={handleRegister}
               />
-              <ButtonComp title="Voltar" type="green" onPress={handleLogin} />
+              <ButtonComp title="Voltar" type='primary' onPress={handleLogin} />
             </KeyboardAvoidingView>
-          </ImageBackground>
         </View>
       )}
     </>

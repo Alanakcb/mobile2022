@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   View,
   Text,
@@ -7,10 +7,11 @@ import {
   Alert,
 } from "react-native";
 import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
-import {ButtonComp} from "../../components";
+import {ButtonComp, LoadingComp} from "../../components";
 import styles from "./styles";
 import { useAuth } from "../../hook/auth";
-import {  IAuthenticate, IUser } from "../../interfaces/User.interface";
+import {  IAuthenticate, IUser, IRegister } from "../../interfaces/User.interface";
+import { IResponse } from "../../interfaces/Response.interface";
 import { LoginTypes } from "../../types/Screen.types";
 import { AxiosError } from "axios";
 
@@ -56,7 +57,7 @@ export default function Cadastrar({ navigation }: LoginTypes) {
     <>
       {isLoading ? (
         <LoadingComp/>
-      ) : )
+      ) : (
         <View style={styles.container}>
             <KeyboardAvoidingView>
               <Text style={styles.title}>Cadastre-se</Text>
@@ -90,12 +91,11 @@ export default function Cadastrar({ navigation }: LoginTypes) {
               </View>
               <ButtonComp
                 title="Salvar"
-                type="purple"
+                type="primary"
                 onPress={handleRegister}
               />
-              <ButtonComp title="Voltar" type="green" onPress={handleLogin} />
+              <ButtonComp title="Voltar" type="primary" onPress={handleLogin} />
             </KeyboardAvoidingView>
-          </ImageBackground>
         </View>
       )}
     </>

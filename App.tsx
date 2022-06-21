@@ -9,3 +9,4 @@ export default function App() {
     </AuthProvider>
   );
 }
+//navegação entre as telas
