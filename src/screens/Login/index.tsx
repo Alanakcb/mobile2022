@@ -15,27 +15,28 @@ import { IResponse } from "../../interfaces/Response.interface";
 import { LoginTypes } from "../../types/Screen.types";
 import { AxiosError } from "axios";
 
-export default function Cadastrar({ navigation }: LoginTypes) {
-  const { register } = useAuth();
-  const [data, setData] = useState<IRegister>();
+export default function Login({ navigation }: LoginTypes) {
+  const { signIn } = useAuth();
+  const [data, setData] = useState<IAuthenticate>();
   const [isLoading, setIsLoading] = useState(true);
-  function handleLogin() {
-    navigation.navigate("Login");
+  function handleCadastrar() {
+    navigation.navigate("Cadastrar");
   }
-  function handleChange(item: IRegister) {
+  function handleChange(item: IAuthenticate) {
     setData({ ...data, ...item });
   }
-  async function handleRegister(){
+  async function handleSignIn(){
     try{
       setIsLoading(true);
-      if(data?.email && data.name && data.password){
-        await register(data);
+      if(data?.email && data.password){
+        await signIn(data);
       }else{
         Alert.alert("Preencha todos os campos!!!");
+        setIsLoading(false);
       }
     } catch (error){
       const err = error as AxiosError;
-      const data = err.response?.data as IResponse;
+      const data = err.response?.data as IUser;
       let message = "";
       if (data.data){
         for (const [key, value] of Object.entries(data.data)){
@@ -43,37 +44,22 @@ export default function Cadastrar({ navigation }: LoginTypes) {
         }
       }
       Alert.alert(`${data.message} ${message}`);
-    }finally{
       setIsLoading(false);
     }
   }
   useEffect(() => {
-    setTimeout(() => {
       setIsLoading(false);
-    }, 500);
   }, []);
 
   return (
-    <>
-      {isLoading ? (
-        <LoadingComp/>
-      ) : (
         <View style={styles.container}>
             <KeyboardAvoidingView>
-              <Text style={styles.title}>Cadastre-se</Text>
+              <Text style={styles.title}>Login</Text>
               <View style={styles.formRow}>
-                <Ionicons name="person" style={styles.icon} />
+                <Ionicons name="email" style={styles.icon} />
                 <TextInput 
                   style={styles.input}
-                  placeholder="Nome"
-                  onChangeText={(i) => handleChange({ name: i })}
-                />
-              </View>
-              <View style={styles.formRow}>
-                <MaterialIcons name="email" style={styles.icon} />
-                <TextInput
-                  style={styles.input}
-                  placeholder="Email"
+                  placeholder="E-mail"
                   keyboardType="email-address"
                   autoCapitalize="none"
                   onChangeText={(i) => handleChange({ email: i })}
@@ -89,15 +75,13 @@ export default function Cadastrar({ navigation }: LoginTypes) {
                   onChangeText={(i) => handleChange({ password: i })}
                 />
               </View>
-              <ButtonComp
-                title="Salvar"
-                type="primary"
-                onPress={handleRegister}
+              <ButtonComp title="Login" type="primary" onPress={handleSignIn}/>
+              <ButtonComp 
+              title="Cadastre-se" 
+              type="primary" 
+              onPress={handleCadastrar} 
               />
-              <ButtonComp title="Voltar" type="primary" onPress={handleLogin} />
             </KeyboardAvoidingView>
         </View>
-      )}
-    </>
    );
 }
