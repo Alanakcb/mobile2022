@@ -56,7 +56,7 @@ export default function Login({ navigation }: LoginTypes) {
             <KeyboardAvoidingView>
               <Text style={styles.title}>Login</Text>
               <View style={styles.formRow}>
-                <Ionicons name="email" style={styles.icon} />
+                <MaterialIcons name="email" style={styles.icon} />
                 <TextInput 
                   style={styles.input}
                   placeholder="E-mail"
