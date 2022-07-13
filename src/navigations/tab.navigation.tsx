@@ -24,7 +24,7 @@ export default function TabNavigation() {
         component={PerfilScreen}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="person" size={24} color={colors.primary} />
+            <Ionicons name="person" size={24} color={colors.white} />
           ),
         }}
       />
@@ -33,7 +33,7 @@ export default function TabNavigation() {
         component={ChatScreen}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="chatbubbles" size={24} color={colors.primary} />
+            <Ionicons name="chatbubbles" size={24} color={colors.white} />
           ),
         }}
       />
