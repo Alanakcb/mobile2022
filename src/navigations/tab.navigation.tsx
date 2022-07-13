@@ -1,9 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen 
+import { ChatScreen, PerfilScreen, MapScreen, qrCodeScreen 
  } from "../screens";
 import colors from "../styles/colors";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { DrawerContent } from "@react-navigation/drawer";
 
 const Tab = createBottomTabNavigator();
 
@@ -42,6 +43,19 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () =>(
             <Ionicons name ="map" size={24} color={colors.white}/>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="QrCode"
+        component={qrCodeScreen}
+        options={{
+         tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="qrcode-scan"
+              size={24}
+              color={colors.white}
+            />
           ),
         }}
       />
