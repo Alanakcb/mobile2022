@@ -59,6 +59,34 @@ export default function TabNavigation() {
           ),
         }}
       />
+      <Tab.Screen
+        name="Câmera"
+        component={CameraScreen}
+        options={{
+          tabLabel:"Câmera",
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="camera"
+              size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Arquivos"
+        component={ArquivoScreen}
+        options={{
+          tabLabel:"Arquivos",
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="file-account"
+              size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
