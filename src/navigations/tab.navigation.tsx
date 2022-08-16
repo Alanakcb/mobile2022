@@ -60,7 +60,7 @@ export default function TabNavigation() {
         }}
       />
       <Tab.Screen
-        name="Câmera"
+        name="Camera"
         component={CameraScreen}
         options={{
           tabLabel:"Câmera",

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     posicao: {
         position: "absolute",
         top: 0,
-        letf: 0,
+        left: 0,
         zIndex: 1,
         width: "100%"
     },
