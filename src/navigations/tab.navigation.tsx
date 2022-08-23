@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen, qrCodeScreen 
+import { ChatScreen, PerfilScreen, MapScreen, qrCodeScreen, CameraScreen, ArquivoScreen
  } from "../screens";
 import colors from "../styles/colors";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
