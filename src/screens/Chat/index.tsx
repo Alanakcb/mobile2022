@@ -14,8 +14,6 @@ import {ChatTypes} from "../../types/Screen.types";
 import {apiMensagem} from "../../services/data";
 import {IMensagemState} from "../../interfaces/Mensagem.interface";
 import styles from "./styles";
-import data from "../../services/data_antigo";
-import Card from "../../components/Card";
 
 export default function Chat({navigation}:ChatTypes) {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +25,7 @@ export default function Chat({navigation}:ChatTypes) {
   useEffect(() => {
     async function loadMensagem() {
       const response = await apiMensagem.index();
+      console.log(response.data.data);
       setMensagem(response.data.data);
       setIsLoading(false);
     }
@@ -43,7 +42,7 @@ export default function Chat({navigation}:ChatTypes) {
           </View>
           {mensagem.length > 0 && (
             <FlatList
-              data={data}
+              data={mensagem}
               renderItem={renderItem}
               keyExtractor={(item) => String(item.id)}
               style={styles.list}

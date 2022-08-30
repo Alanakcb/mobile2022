@@ -1,10 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, MapScreen, qrCodeScreen, CameraScreen, ArquivoScreen
+import { PerfilScreen, MapScreen, qrCodeScreen, CameraScreen, ArquivoScreen
  } from "../screens";
 import colors from "../styles/colors";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import { DrawerContent } from "@react-navigation/drawer";
+import ChatNavigation from "./chat.navigation"
+
 
 const Tab = createBottomTabNavigator();
 
@@ -28,15 +29,7 @@ export default function TabNavigation() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Chat"
-        component={ChatScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="chatbubbles" size={24} color={colors.white} />
-          ),
-        }}
-      />
+      
       <Tab.Screen
         name="Map"
         component={MapScreen}
@@ -82,6 +75,21 @@ export default function TabNavigation() {
             <MaterialCommunityIcons
               name="file-account"
               size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ChatNavigation"
+        component={ChatNavigation}
+        options={{
+          title: "Chat",
+          tabLabel: "Chat",
+          tabBarIcon: () => (
+            <Ionicons 
+              name="chatbubbles" 
+              size={24} 
               color={colors.white}
             />
           ),

@@ -17,7 +17,7 @@ export interface IMensagemResponse {
         titulo: string
         mensagem: string
         imagem: string
-        create_at: Date
+        created_at: Date
         topicos: {
             id: number
             topico: string
