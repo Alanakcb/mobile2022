@@ -114,7 +114,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
             {isLoading ? (
                 <LoadingComp />
             ) : (
-                <View>
+                <View style={styles.container}>
                     {startOver ? (
                         <KeyboardAvoidingView style={styles.containerForm}>
                             <TextInput
@@ -138,10 +138,11 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                                     selectedItems={selectedTopico}
                                     selectedItemTextColor={colors.primary}
                                     tagBorderColor={colors.primary}
-                                    tagTextColor={colors.secondary}
+                                    tagTextColor={colors.primary}
                                     submitButtonColor={colors.primary}
                                     styleDropdownMenu={styles.selectTopico}
                                     styleInputGroup={styles.selectTopico}
+                                    styleMainWrapper={{backgroundColor: colors.primaryLight}}
                                 />
                             </View>
                             <View style={styles.imagem}>
@@ -168,7 +169,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                             />
                             <ButtonComp
                                 title="Voltar"
-                                type="third"
+                                type="primary"
                                 onPress={handleVoltar}
                             />
                         </KeyboardAvoidingView>

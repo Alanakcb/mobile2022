@@ -56,7 +56,7 @@ export default function TabNavigation() {
         name="Camera"
         component={CameraScreen}
         options={{
-          tabLabel:"Câmera",
+          tabBarLabel:"Câmera",
           tabBarIcon: () => (
             <MaterialCommunityIcons
               name="camera"
@@ -70,7 +70,7 @@ export default function TabNavigation() {
         name="Arquivos"
         component={ArquivoScreen}
         options={{
-          tabLabel:"Arquivos",
+          tabBarLabel:"Arquivos",
           tabBarIcon: () => (
             <MaterialCommunityIcons
               name="file-account"
@@ -85,7 +85,7 @@ export default function TabNavigation() {
         component={ChatNavigation}
         options={{
           title: "Chat",
-          tabLabel: "Chat",
+          tabBarLabel: "Chat",
           tabBarIcon: () => (
             <Ionicons 
               name="chatbubbles" 

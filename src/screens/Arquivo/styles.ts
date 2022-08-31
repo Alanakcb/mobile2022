@@ -4,6 +4,7 @@ import colors from '../../styles/colors'
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: colors.primaryLight,
     },
     buttonTopPosition: {
         position: "absolute",
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     buttonStartOver: {
         width: 130,
         borderRadius: 4,
-        backgroundColor: colors.primaryLight,
+        backgroundColor: colors.primary,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     },
     startOver: {
         flex: 1,
-        backgroundColor: colors.white,
+        backgroundColor: colors.primaryLight,
         justifyContent: "center",
         alignItems: "center",
     },
