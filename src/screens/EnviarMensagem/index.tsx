@@ -70,11 +70,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                     formData.append("file", imageName);
                 }
                 
-                formData.append("titulo", data.titulo);
-                formData.append("mensagem", data.mensagem);
-                selectedTopico.forEach((e) => {
-                    formData.append("topico[]", e);
-                });
+
                 await apiMensagem.store(formData as IMensagem);
                 navigation.navigate("Chat");
             } else {
@@ -117,33 +113,10 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                 <View style={styles.container}>
                     {startOver ? (
                         <KeyboardAvoidingView style={styles.containerForm}>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="Título"
-                                onChangeText={(i) => handleChange({ titulo: i })}
-                            />
-                            <TextInput
-                                style={styles.input}
-                                multiline={true}
-                                numberOfLines={4}
-                                placeholder="Mensagem"
-                                onChangeText={(i) => handleChange({ mensagem: i })}
-                            />
+                            
+                            
                             <View style={styles.select}>
-                                <MultiSelect
-                                    items={topico}
-                                    uniqueKey="id"
-                                    selectText="Selecione os Tópicos"
-                                    onSelectedItemsChange={(i) => setSelectedTopico(i)}
-                                    selectedItems={selectedTopico}
-                                    selectedItemTextColor={colors.primary}
-                                    tagBorderColor={colors.primary}
-                                    tagTextColor={colors.primary}
-                                    submitButtonColor={colors.primary}
-                                    styleDropdownMenu={styles.selectTopico}
-                                    styleInputGroup={styles.selectTopico}
-                                    styleMainWrapper={{backgroundColor: colors.primaryLight}}
-                                />
+                                
                             </View>
                             <View style={styles.imagem}>
                                 <TouchableOpacity
@@ -162,11 +135,7 @@ export default function EnviarMensagem({ navigation }: ChatTypes) {
                                     <Image source={{ uri: data.imagem.uri }} style={styles.img} />
                                 )}
                             </View>
-                            <ButtonComp
-                                title="Salvar"
-                                    type="primary"
-                                onPress={handleSubmit}
-                            />
+                            
                             <ButtonComp
                                 title="Voltar"
                                 type="primary"

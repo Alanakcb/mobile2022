@@ -1,7 +1,7 @@
 export default {
     black: '#000000',
     white: '#ffffff',
-    primary: '#BD4B4B',
-    primaryLight: '#FFE3E3',
-    third: '#F4C7C7',
+    primary: '#8D6E63',
+    primaryLight: '#CFD8DC',
+    third: '#D7CCC8',
   }
