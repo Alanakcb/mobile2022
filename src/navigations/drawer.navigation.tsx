@@ -1,8 +1,10 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { ChatScreen, PerfilScreen } from "../screens";
+import { PerfilScreen, MapScreen, qrCodeScreen, CameraScreen, ArquivoScreen, SairScreen, ChatScreen, VideoAudioScreen
+} from "../screens";
 import colors from "../styles/colors";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import ChatNavigation from "./chat.navigation"
 
 const Drawer = createDrawerNavigator();
 
@@ -11,7 +13,7 @@ export default function DrawerNavigation() {
     <Drawer.Navigator
       screenOptions={{
         headerShown: true,
-        headerStyle: { backgroundColor: colors.primary },
+        headerStyle: { backgroundColor: colors.primaryLight },
         headerTintColor: colors.primary,
         drawerStyle: { backgroundColor: colors.primary },
         drawerActiveTintColor: colors.white,
@@ -43,6 +45,82 @@ export default function DrawerNavigation() {
         options={{
           drawerIcon: () => (
             <Ionicons name="chatbubbles" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Map"
+        component={MapScreen}
+        options={{
+          drawerIcon: () =>(
+            <Ionicons name ="map" size={24} color={colors.white}/>
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="QrCode"
+        component={qrCodeScreen}
+        options={{
+         drawerIcon: () => (
+            <MaterialCommunityIcons
+              name="qrcode-scan"
+              size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Camera"
+        component={CameraScreen}
+        options={{
+          drawerIcon: () => (
+            <MaterialCommunityIcons
+              name="camera"
+              size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Arquivos"
+        component={ArquivoScreen}
+        options={{
+          drawerIcon: () => (
+            <MaterialCommunityIcons
+              name="file-account"
+              size={24}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="ChatNavigation"
+        component={ChatNavigation}
+        options={{
+          title: "Chat",
+          drawerIcon: () => (
+            <Ionicons 
+              name="chatbubbles" 
+              size={24} 
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="AudioVideo"
+        component={VideoAudioScreen}
+        options={{
+          drawerLabel:"Áudio Vídeo",
+          drawerIcon: () => (
+            <MaterialCommunityIcons
+              name="video"
+              size={24}
+              color={colors.white}
+            />
           ),
         }}
       />
