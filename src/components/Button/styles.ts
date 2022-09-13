@@ -5,12 +5,14 @@ const styles = StyleSheet.create({
   buttonprimary: {
     backgroundColor: colors.primary,
     borderRadius: 5,
-    margin: 10
+    margin: 10,
+    width: '90%'
   },
   buttonSecondary: {
     backgroundColor: colors.primaryLight,
     borderRadius: 5,
-    margin: 10
+    margin: 10,
+    width: '90%'
   },
   buttonThird: {
     backgroundColor: colors.third,

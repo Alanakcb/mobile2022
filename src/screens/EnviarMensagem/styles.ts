@@ -10,14 +10,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: "100%",
+        backgroundColor: colors.primaryLight,
+        
     },
     input: {
         fontSize: 18,
         padding: 10,
+        backgroundColor: colors.primaryLight,
         width: "80%",
         textAlignVertical: 'top',
         borderWidth: 1,
-        borderColor: colors.primaryLight,
+        borderColor: colors.primary,
         borderRadius: 5,
         margin: 10,
     },
@@ -30,6 +33,7 @@ const styles = StyleSheet.create({
     selectTopico: {
         borderWidth: 1,
         borderColor: colors.primary,
+        backgroundColor: colors.primaryLight,
         borderRadius: 5,
         padding: 10,
         height: 70
@@ -87,7 +91,7 @@ const styles = StyleSheet.create({
         height: 70,
         bottom: 0,
         borderRadius: 50,
-        backgroundColor: colors.white,
+        backgroundColor: colors.primary,
     },
 });
 

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
     startOver: {
         flex: 1,
-        backgroundColor: colors.white,
+        backgroundColor: colors.primaryLight,
         justifyContent: "center",
         alignItems: "center",
     },
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         height: 70,
         bottom: 0,
         borderRadius: 50,
-        backgroundColor: colors.white,
+        backgroundColor: colors.primary,
     },
 });
 
