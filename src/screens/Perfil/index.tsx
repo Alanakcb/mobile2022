@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import { View, Text, ImageBackground, Image, Alert } from "react-native";
 import CardSocial from "../../components/CardSocial";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -8,9 +8,27 @@ import { ButtonComp, CardSocialComp } from "../../components";
 import { useAuth } from "../../hook/auth";
 import { IUser } from "../../interfaces/User.interface";
 import { AxiosError } from "axios";
+import * as Notifications from 'expo-notifications';
+import { registerForPushNotificationsAsync } from "../../services/data/Push";
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  }),
+});
 
 export default function Perfil() {
   const {user, signOut}=useAuth();
+  useEffect(() => {
+    async function fetchToken(){
+      const token = await registerForPushNotificationsAsync()
+      console.log(token)
+    }
+    fetchToken()
+  },[]);
+  
   async function logout() {
     try {
         await signOut();
