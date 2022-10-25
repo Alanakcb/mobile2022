@@ -3,6 +3,7 @@ Content-Type: application/json
 
 {
     "to": "ExponentPushToken[EwDPYnBTZ3-GgLZCedLIu1]",
-    "title": "alana",
-    "body": "world"
+    "title": "Lembrete do Dia",
+    "body": "nada é tão ruim que não possa piorar"
+
 }
