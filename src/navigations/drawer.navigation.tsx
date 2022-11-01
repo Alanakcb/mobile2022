@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { PerfilScreen, MapScreen, qrCodeScreen, CameraScreen, ArquivoScreen, SairScreen, ChatScreen, VideoAudioScreen, AcelerometroScreen, 
-  PedometroScreen
+  PedometroScreen, GyroscopioScreen, MagnetoScreen
 } from "../screens";
 import colors from "../styles/colors";
 import { Ionicons, MaterialCommunityIcons, FontAwesome, Foundation } from "@expo/vector-icons";
@@ -147,6 +147,33 @@ export default function DrawerNavigation() {
           drawerIcon: () => (
             <Foundation
               name="foot"
+              size={48}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Magneto"
+        component={MagnetoScreen}
+        options={{
+          drawerLabel: "Magneto",
+          drawerIcon: () => (
+            <FontAwesome name="magnet"
+              size={30}
+              color={colors.white}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Gyroscopio"
+        component={GyroscopioScreen}
+        options={{
+          drawerLabel: "Gyroscópio",
+          drawerIcon: () => (
+            <FontAwesome
+              name="balance-scale"
               size={24}
               color={colors.white}
             />
